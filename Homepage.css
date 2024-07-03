@@ -1,0 +1,302 @@
+html, body {
+margin: 0;
+padding: 0;
+}
+
+body{
+	background-color: linear-gradient (to left, #ff8a00, #e52e71);
+	min-height: 100vh;
+	font-family: Poppins;
+	display: flex;
+}
+
+
+.nav_bar img{
+padding-top: 2px;
+padding-bottom: 5px;
+margin-left:2%;
+}
+
+
+
+.nav_bar{
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	padding-top: 0%;
+	height: 70px;
+	width:100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: white;
+	justify-content: space-around;
+	backdrop-filter: blur(10px);
+}
+
+
+
+.nav_bar button {
+	text-decoration: none; 
+	background-color:  rgba(225, 225, 000, 0);
+	border-color: rgba(225, 225, 000, 0);
+	padding-color:  rgba(225, 225, 000, 0);
+	padding-top: 
+	height: 30px;
+	width: 80px;
+	font-family: Poppins;
+}
+
+
+
+.nav_bar input {
+    margin-left: 10px;
+    margin-right:7px;
+    margin-top:7px;
+    margin-bottom: 7px;
+    flex-shrink: 1;
+    padding: 5%:  
+    height: 100px;
+    width: 100px;
+    padding-top: 0;
+    padding-bottom: 0;
+    border: 1px solid  #; 
+	border-radius: 7px;
+	background-image: url('search-btn.svg');
+	background-repeat: no-repeat;
+	}
+
+
+
+
+#login_button{
+    border: solid; 
+	border:0px;
+	color: white;
+	border-radius: 7px;
+	margin-left:2%;
+	margin-top:20px;
+	margin-bottom:20px;
+    height: 30px;
+    width: ;
+    margin-right:2%;
+	background-color: rgba(225, 000, 000, 0.7);  
+}
+
+
+
+header_buttons{
+	background-color: black;
+}
+
+
+
+#body_div{
+	display: flex;
+	justify-content: center;
+}
+
+
+
+#text_part{
+    max-width: 40%;
+    margin-top: 9px;
+    padding:10% 5% 10% 5%;
+    justify-content: flex-start
+}
+
+
+
+
+#main_title{
+	padding-top: 0;
+	font-size: 50px;
+	font-family: Futura Md BT;
+}
+
+#Fr{
+color: blue;
+}
+#en{
+color: grey;
+}
+#ch{
+color: red;
+}
+
+
+#subtext {
+   font-size: 18px;
+   font-family: Poppins;
+   color: #9c9c9c;
+}
+
+#subtext_undertext{
+	font-family: Poppins;
+
+ }
+
+lang_drop_down_and_start_learning_button{
+	background-color: rgba(225, 000, 000, 0.7);
+	border: solid; 
+	border:0px;
+	border-radius: 7px;
+	padding-color:  rgba(225, 225, 000, 0);
+    padding-top: 2%;
+	height: 30px;
+	width: 20%;
+	font-color: white;
+    }
+
+
+#lang_drop_down{
+min-width: 15em;
+position: relative;
+margin: 2em;
+}
+
+#lang_drop_down *{
+    box-sizing: border-box;
+}
+
+
+.select{
+	background: ;
+	color: #9c9c9c;
+	display: flex;
+	width: 200px;
+	justify-content: space-between;
+	align-items: center;
+	border: 1px #9c9c9c solid;
+	border-radius: 0.5em;
+	padding: 1em;
+	cursor: pointer;
+	transition: background 0.3s;
+}
+
+.select-clicked {
+	border: 2px #26489a solid;
+	box-shadow: 0 0 0.8em #26489a;
+}
+
+
+.select:hover {
+	background: #323741;
+
+}
+
+.caret {
+	width: 0;
+	height: 0;
+	color: #9c9c9c;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+	border-top: 6px solid #fff;
+	transition: 0.3s;
+}
+
+
+.caret-rotate {
+	 transform: rotate(180deg);
+} 
+
+
+.menu{
+	list-style: none;
+	padding: 0.2em 0.5em;
+	background: #323741;
+	border:1px #363a43 solid;
+	box-shadow: 0 0.5em 1em rgba(0, 0, 0 0.2);
+	border-radius: 0.5em;
+	color : #9fa5b5;
+	position: absolute;
+	top: 3em;
+	left: 50%;
+	width: 100%
+	transform: translateX(-50);
+	opacity: 0;
+	display: none;
+	transition: 0.2s
+	z-index: 1;
+}
+
+.menu li {
+	 padding: 0.7em 0.5em;
+	 margin: 0.3em 0;
+	 border-radius: 0.5em;
+	 cursor: pointer; 
+}
+
+
+.menu li:hover {
+	background: #2a2d35;
+}
+
+
+.active {
+	background: #23242a;
+}
+
+
+.menu-open{
+   display: block;
+   opacity: 1;
+
+}
+
+#start_learning_button{
+	background-color: rgba(225, 000, 000, 0.7);
+	border: solid; 
+	border:0px;
+	color: white;
+	border-radius: 7px;
+    height: 30px;
+    width: 300;
+	display: flex;
+}
+
+
+#drop_down_content{
+	position: relative;
+	display: inline-block;
+}
+
+
+#lang_drop_down_and_start_learning_button{
+	display: flex;
+	align-items: center;
+}
+
+#lang_drop_down_and_start_learning_button span{
+	
+}
+
+
+#start_learning_button{
+	margin-left: 20px;
+   padding: 0;
+   height: 40px;
+   width: 70px;
+}
+
+
+
+#image_part{
+	max-width: 40%;
+    margin-top: 9px;
+    padding: 10% 1% 10% 10%;
+    margin: 20px 20px 0 0 ;
+}
+
+
+
+
+
+#footer{
+	align-content: flex-end;
+	margin-bottom: 
+	background-color: solid red;
+	margin: solid red;
+	height: 20%; 
+}
+

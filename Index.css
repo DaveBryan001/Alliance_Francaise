@@ -1,0 +1,147 @@
+html, body {
+margin: 0;
+padding: 0;
+}
+
+body{
+	background-color: linear-gradient (to left, #ff8a00, #e52e71);
+	min-height: 100vh;
+	font-family: Poppins;
+}
+
+
+.nav_bar img{
+padding-top: 2px;
+padding-bottom: 5px;
+margin-left:2%;
+}
+
+
+
+.nav_bar{
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	padding-top: 0%;
+	height: 70px;
+	width:100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: white;
+	justify-content: space-around;
+	backdrop-filter: blur(10px);
+}
+
+
+
+.nav_bar button {
+	text-decoration: none; 
+	background-color:  rgba(225, 225, 000, 0);
+	border-color: rgba(225, 225, 000, 0);
+	padding-color:  rgba(225, 225, 000, 0);
+	padding-top: 
+	height: 30px;
+	width: 80px;
+	font-family: Poppins;
+}
+
+
+
+.nav_bar input {
+    margin-left: 10px;
+    margin-right:7px;
+    margin-top:7px;
+    margin-bottom: 7px;
+    padding: 5%:  
+    height: 100px;
+    width: 200px;
+    padding-top: 0;
+    padding-bottom: 0;
+    border: 1px solid  #9c9c9c; 
+	border-radius: 7px;
+	background-image: url('search-btn.svg');
+	background-repeat: no-repeat;
+	}
+
+
+
+
+#login_button{
+    border: solid; 
+	border:0px;
+	color: white;
+	border-radius: 7px;
+	margin-left:2%;
+	margin-top:20px;
+	margin-bottom:20px;
+    height: 30px;
+    width: ;
+    margin-right:2%;
+
+	background-color: rgba(225, 000, 000, 0.7);  
+}
+
+
+
+header_buttons{
+	background-color: black;
+}
+
+
+
+#body_div{
+	display: flex;
+	justify-content: center;
+	height: 90%;
+}
+
+
+
+
+#footer{
+	position: fixed;
+	padding-top: 0%;
+	height: 5%;
+	width:100%;
+	margin-top:90%;
+	display: flex;
+	align-content: flex-end;
+	background-color: rgba(225, 000, 000, 0.7);
+	justify-content: space-around;
+	
+}
+
+
+overflow: hidden;
+	position: fixed;
+	top: 0;
+	padding-top: 0%;
+	height: 70px;
+	width:100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: white;
+	justify-content: space-around;
+	backdrop-filter: blur(10px);
+
+
+.header  {
+	display: flex;
+background-color: green;
+width: 100%;
+}
+
+
+
+#hero_visuals {
+	margin-top: 30%;
+}
+
+
+
+#bottmimgstest{
+	display: flex;
+	justify-content: space-around;
+}
