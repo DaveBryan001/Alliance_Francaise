@@ -1,0 +1,186 @@
+html, body {
+margin: 0;
+padding: 0;
+}
+
+body{
+	background-color: linear-gradient (to left, #ff8a00, #e52e71);
+	min-height: 100vh;
+	font-family: Poppins;
+}
+
+
+.nav_bar img{
+padding-top: 2px;
+padding-bottom: 5px;
+margin-left:2%;
+}
+
+
+
+.nav_bar{
+	overflow: hidden;
+	position: fixed;
+	top: 0;
+	padding-top: 0%;
+	height: 70px;
+	width:100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: white;
+	justify-content: space-around;
+	backdrop-filter: blur(10px);
+}
+
+
+
+.nav_bar button {
+	text-decoration: none; 
+	background-color:  rgba(225, 225, 000, 0);
+	border-color: rgba(225, 225, 000, 0);
+	padding-color:  rgba(225, 225, 000, 0);
+	padding-top: 
+	height: 30px;
+	width: 80px;
+	font-family: Poppins;
+}
+
+
+
+.nav_bar input {
+    margin-left: 10px;
+    margin-right:7px;
+    margin-top:7px;
+    margin-bottom: 7px;
+    flex-shrink: 1;
+    padding: 5%:  
+    height: 100px;
+    width: 100px;
+    padding-top: 0;
+    padding-bottom: 0;
+    border: 1px solid  #9c9c9c; 
+	border-radius: 7px;
+	background-image: url('search-btn.svg');
+	background-repeat: no-repeat;
+	}
+
+
+
+
+#login_button{
+    border: solid; 
+	border:0px;
+	color: white;
+	border-radius: 7px;
+	margin-left:2%;
+	margin-top:20px;
+	margin-bottom:20px;
+    height: 30px;
+    width: ;
+    margin-right:2%;
+
+	background-color: rgba(225, 000, 000, 0.7);  
+}
+
+
+
+header_buttons{
+	background-color: black;
+}
+
+
+
+#body_div{
+	display: flex;
+	justify-content: center;
+}
+
+
+
+#text_part{
+    max-width: 40%;
+    margin-top: 9px;
+    padding:10% 5% 10% 5%;
+    justify-content: flex-start
+}
+
+
+
+
+#main_title{
+	padding-top: 0;
+	font-size: 50px;
+	font-family: Futura Md BT;
+}
+
+#Fr{
+color: blue;
+}
+#en{
+color: grey;
+}
+#ch{
+color: red;
+}
+
+
+#subtext {
+   font-size: 18px;
+   font-family: Poppins;
+   color: #9c9c9c;
+}
+
+#subtext_undertext{
+	font-family: Poppins;
+
+ }
+
+lang_drop_down_and_start_learning_button{
+	background-color: rgba(225, 000, 000, 0.7);
+	border: solid; 
+	border:0px;
+	border-radius: 7px;
+	padding-color:  rgba(225, 225, 000, 0);
+    padding-top: 2%;
+	height: 30px;
+	width: 20%;
+	font-color: white;
+    }
+
+
+#start_learning_button{
+	background-color: blue;
+	display: flex;
+}
+
+
+#drop_down_content{
+	position: relative;
+	display: inline-block;
+}
+
+#start_learning_button{
+	display: inline;
+
+}
+
+#image_part{
+	max-width: 40%;
+    margin-top: 9px;
+    padding: 10% 1% 10% 10%;
+    margin: 20px 20px 0 0 ;
+}
+
+
+
+
+
+#footer{
+	align-content: flex-end;
+	margin-bottom: 
+	background-color: solid red;
+	margin: solid red;
+	height: 20%; 
+}
+
