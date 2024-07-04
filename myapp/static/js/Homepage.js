@@ -4,11 +4,11 @@ const dropdowns = document.querySelectorAll('.lang_drop_down');
 //Loop through aLL dropdown eLements 
 dropdowns.forEach(lang_drop_down => { 
 //Get inner eLements from each dropdom 
-const select = dropdown.querySelector('.select'); 
-const caret = dropdown.querySelector('.caret'); 
-const menu = dropdown.querySelector('.menu'); 
-const options = dropdown.querySelectorAll('.menu li'); 
-const selected = dropdown.querySelector('.selected'); 
+const select = dropdowns.querySelector('.select'); 
+const caret = dropdowns.querySelector('.carets'); 
+const menu = dropdowns.querySelector('.menu'); 
+const options = dropdowns.querySelectorAll('.menu li'); 
+const selected = dropdowns.querySelector('.selected'); 
 
 /*
 we are usirrg this method tn order ro hove 

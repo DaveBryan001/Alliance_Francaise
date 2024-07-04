@@ -1,17 +1,61 @@
-html, body {
+html {
 margin: 0;
 padding: 0;
 }
 
 body{
 	background-color: linear-gradient (to left, #ff8a00, #e52e71);
-	min-height: 100vh;
-	font-family: Poppins;
-	display: flex;
+	/* min-height: 100vh; */
+	font-family: "Poppins", sans-serif;
+	/* display: flex; */
 }
 
 
-.nav_bar img{
+.nav-links {
+  /* display: flex; */
+}
+
+/* nav {
+	justify-content: space-around;
+	align-items: center;
+	height: 17vh;
+  } */
+  
+  .nav-links {
+	/* gap: 2rem; */
+	font-size: 0.8rem;
+  }
+  nav ul li {
+	list-style-type: none;
+	/* flex-wrap: nowrap; */
+	display: inline-block;
+  }
+  
+  nav ul li a {
+	text-decoration: none;
+	color: black;
+	transition: all 0.3s ease;
+	position: relative;
+	margin-right: 25px;
+  }
+  
+  nav ul li a::after {
+	content: '';
+	width: 0%;
+	height: 3px;
+	background: #D82E50;
+	position: absolute;
+	left: 0;
+	bottom: -6px;
+	transition: 0.5s;
+	z-index: 10;
+  }
+  
+  nav ul li a:hover::after {
+	width: 100%;
+  }
+
+.logo{
 padding-top: 2px;
 padding-bottom: 5px;
 margin-left:2%;
@@ -19,24 +63,43 @@ margin-left:2%;
 
 
 
-.nav_bar{
-	overflow: hidden;
+.navbar{
+	/* overflow: hidden; */
 	position: fixed;
 	top: 0;
-	padding-top: 0%;
+	/* padding: 15px; */
 	height: 70px;
-	width:100%;
+	/* width:100vw; */
 	display: flex;
-	justify-content: center;
-	align-items: center;
+	justify-content: space-between;
+	align-items:center;
 	background-color: white;
-	justify-content: space-around;
 	backdrop-filter: blur(10px);
 }
 
+.desktop-nav {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;	
+}
 
+.left-nav {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
 
-.nav_bar button {
+.right-nav {
+display: flex;
+align-items: center;
+justify-content: space-around;
+
+}
+
+.search-container{
+	display: flex;
+}
+/* .nav_bar button {
 	text-decoration: none; 
 	background-color:  rgba(225, 225, 000, 0);
 	border-color: rgba(225, 225, 000, 0);
@@ -44,32 +107,73 @@ margin-left:2%;
 	padding-top: 
 	height: 30px;
 	width: 80px;
-	font-family: Poppins;
-}
+} */
 
 
 
-.nav_bar input {
-    margin-left: 10px;
-    margin-right:7px;
-    margin-top:7px;
-    margin-bottom: 7px;
+.search-field {
     flex-shrink: 1;
-    padding: 5%:  
-    height: 100px;
+    padding: 5%;  
+    height: 40px;
     width: 100px;
     padding-top: 0;
     padding-bottom: 0;
-    border: 1px solid  #; 
+    border: 1px solid; 
 	border-radius: 7px;
 	background-image: url('search-btn.svg');
 	background-repeat: no-repeat;
 	}
 
+.lang-selector {
+	position: relative;
+	display: inline-block;
+}
 
+.lang-btn {
+	background-color: white;
+	border:  none;
+	border-radius: 4px;
+	padding: 10px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+}
 
+.globe-icon {
+	margin-right: 6px;
+}
 
-#login_button{
+.carets {
+	margin-left: auto;
+	border-top: 5px solid black;
+	border-left: 5px solid transparent;
+	border-right: 5px solid transparent;
+}
+
+.lang-dropdown {
+	display: none;
+	position: absolute;
+	background-color: white;
+	border: 1px solid #ccc;
+	border-radius: 4px;
+	margin-top: 5px;
+	width: 150px;
+	z-index: 1000;
+	list-style: none;
+	padding: 0;
+	box-shadow: 0 2px 8px rgba(0, 0, 0 0.1);
+}
+
+.lang-dropdown li {
+	padding: 10px;
+	cursor: pointer;
+}
+
+.lang-dropdown li:hover {
+	background-color: #f0f0f0;
+}
+
+#login_button {
     border: solid; 
 	border:0px;
 	color: white;
@@ -78,9 +182,9 @@ margin-left:2%;
 	margin-top:20px;
 	margin-bottom:20px;
     height: 30px;
-    width: ;
+    /* width: */
     margin-right:2%;
-	background-color: rgba(225, 000, 000, 0.7);  
+	background-color: #D82E50;
 }
 
 
@@ -88,7 +192,7 @@ margin-left:2%;
 header_buttons{
 	background-color: black;
 }
-
+ */
 
 
 #body_div{
@@ -111,29 +215,27 @@ header_buttons{
 #main_title{
 	padding-top: 0;
 	font-size: 50px;
-	font-family: Futura Md BT;
+	font-family: "Supreme";
 }
 
 #Fr{
-color: blue;
+color: #0054a3;
 }
 #en{
-color: grey;
+color: #BFD2EE;
 }
 #ch{
-color: red;
+color: #D82E50;
 }
 
 
 #subtext {
    font-size: 18px;
-   font-family: Poppins;
    color: #9c9c9c;
 }
 
 #subtext_undertext{
-	font-family: Poppins;
-
+	
  }
 
 lang_drop_down_and_start_learning_button{

@@ -10,7 +10,7 @@ from .filters import CourseFilter, EventFilter
 from dal import autocomplete
 
 def home(request):
-    return render(request, 'home.html')
+    return render(request, 'Hompage.html')
 
 
 def search(request):
@@ -22,7 +22,7 @@ def search(request):
             query = form.cleaned_data['query']
             results = SearchQuerySet().filter(content=query)
 
-    return render(request, 'index.html', {'form': form, 'results': results})
+    return render(request, 'Homepage.html', {'form': form, 'results': results})
 
 
 def register(request):

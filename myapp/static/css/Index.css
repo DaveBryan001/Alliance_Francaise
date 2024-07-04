@@ -40,7 +40,7 @@ margin-left:2%;
 	background-color:  rgba(225, 225, 000, 0);
 	border-color: rgba(225, 225, 000, 0);
 	padding-color:  rgba(225, 225, 000, 0);
-	padding-top: 
+	padding-top: ;
 	height: 30px;
 	width: 80px;
 	font-family: Poppins;
@@ -53,14 +53,14 @@ margin-left:2%;
     margin-right:7px;
     margin-top:7px;
     margin-bottom: 7px;
-    padding: 5%:  
+    padding: 5%;
     height: 100px;
     width: 200px;
     padding-top: 0;
     padding-bottom: 0;
     border: 1px solid  #9c9c9c; 
 	border-radius: 7px;
-	background-image: url('search-btn.svg');
+	background-image: url('../static/images/search-btn.svg');
 	background-repeat: no-repeat;
 	}
 
