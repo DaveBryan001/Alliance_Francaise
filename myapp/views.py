@@ -1,60 +1,75 @@
-from django.shortcuts import render, redirect
+from rest_framework import viewsets, permissions, generics
 from .models import Course, Event, Resource
-from .forms import SearchForm, CustomUserCreationForm
+from .serializers import CourseSerializer, EventSerializer, ResourceSerializer, RegisterSerializer, UserSerializer
+from rest_framework.decorators import action
+from rest_framework.response import Response
+from django.contrib.auth.models import User
+from rest_framework.permissions import AllowAny
 from haystack.query import SearchQuerySet
-from django.contrib.auth import login, authenticate
-from django.contrib.auth.forms import UserCreationForm
-from django.urls import reverse_lazy
-from django.contrib.auth.views import LoginView, LogoutView
-from .filters import CourseFilter, EventFilter
-from dal import autocomplete
-
-def home(request):
-    return render(request, 'Hompage.html')
+from rest_framework.response import Response
+from rest_framework.views import APIView
 
 
-def search(request):
-    form = SearchForm()
-    results = []
-    if 'query' in request.GET:
-        form = SearchForm(request.GET)
-        if form.is_valid():
-            query = form.cleaned_data['query']
-            results = SearchQuerySet().filter(content=query)
 
-    return render(request, 'Homepage.html', {'form': form, 'results': results})
+class CourseViewSet(viewsets.ModelViewSet):
+    queryset = Course.objects.all()
+    serializer_class = CourseSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    @action(detail=False, methods=['get'], permission_classes=[permissions.AllowAny])
+    def search(self, request):
+        query = request.query_params.get('q', '')
+        courses = self.get_queryset().filter(name__icontains=query)
+        serializer = self.get_serializer(courses, many=True)
+        return Response(serializer.data)
+
+class EventViewSet(viewsets.ModelViewSet):
+    queryset = Event.objects.all()
+    serializer_class = EventSerializer
+    permission_classes = [permissions.IsAuthenticated]
+
+    @action(detail=False, methods=['get'], permission_classes=[permissions.AllowAny])
+    def search(self, request):
+        query = request.query_params.get('q', '')
+        events = self.get_queryset().filter(name__icontains=query)
+        serializer = self.get_serializer(events, many=True)
+        return Response(serializer.data)
+
+class ResourceViewSet(viewsets.ModelViewSet):
+    queryset = Resource.objects.all()
+    serializer_class = ResourceSerializer
+    permission_classes = [permissions.IsAuthenticatedOrReadOnly]
+
+    @action(detail=False, methods=['get'], permission_classes=[permissions.AllowAny])
+    def search(self, request):
+        query = request.query_params.get('q', '')
+        resources = self.get_queryset().filter(name__icontains=query)
+        serializer = self.get_serializer(resources, many=True)
+        return Response(serializer.data)
 
 
-def register(request):
-    if request.method == 'POST':
-        form = CustomUserCreationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            username = form.cleaned_data.get('username')
-            password = form.cleaned_data.get('password1')
-            user = authenticate(username=username, password=password)
-            login(request, user)
-            return redirect('/')
-    else:
-        form = CustomUserCreationForm()
-    return render(request, 'register.html', {'form': form})
+class RegisterAPI(generics.CreateAPIView):
+    queryset = User.objects.all()
+    serializer_class = RegisterSerializer
+    permission_classes = [AllowAny]
 
+class UserAPI(generics.RetrieveAPIView):
+    permission_classes = [permissions.IsAuthenticated]
+    serializer_class = UserSerializer
 
-def course_list(request):
-    course_filter = CourseFilter(request.GET, queryset=Course.objects.all())
-    return render(request, 'course_list.html', {'filter': course_filter})
+    def get_object(self):
+        return self.request.user
 
-def event_list(request):
-    event_filter = EventFilter(request.GET, queryset=Event.objects.all())
-    return render(request, 'event_list.html', {'filter': event_filter})
+class SearchAPIView(APIView):
+    def get(self, request):
+        query = request.query_params.get('q', '')
+        course_results = SearchQuerySet().models(Course).filter(content=query)
+        event_results = SearchQuerySet().models(Event).filter(content=query)
+        resource_results = SearchQuerySet().models(Resource).filter(content=query)
 
-
-class CustomLoginView(LoginView):
-    template_name = 'login.html'
-
-class CourseAutocomplete(autocomplete.Select2QuerySetView):
-    def get_queryset(self):
-        qs = Course.objects.all()
-        if self.q:
-            qs = qs.filter(name__icontains=self.q)
-        return qs
+        results = {
+            'courses': [{'name': course.name, 'description': course.description} for course in course_results],
+            'events': [{'name': event.name, 'description': event.description} for event in event_results],
+            'resources': [{'name': resource.name, 'description': resource.description} for resource in resource_results],
+        }
+        return Response(results)
