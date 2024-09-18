@@ -1,8 +1,10 @@
 anyascii==0.3.2
 asgiref==3.8.1
 beautifulsoup4==4.12.3
+build==1.2.2
 certifi==2024.6.2
 charset-normalizer==3.3.2
+click==8.1.7
 defusedxml==0.7.1
 dj-rest-auth==6.0.0
 Django==5.0.6
@@ -37,13 +39,16 @@ openpyxl==3.1.5
 packaging==24.1
 pillow==10.4.0
 pillow_heif==0.17.0
+pip-tools==7.4.1
 PyJWT==2.8.0
+pyproject_hooks==1.1.0
 pytz==2024.1
 requests==2.32.3
 six==1.16.0
 soupsieve==2.5
 sqlparse==0.5.0
 telepath==0.3.1
+tomli==2.0.1
 typing_extensions==4.12.2
 urllib3==2.2.2
 wagtail==6.1.2
